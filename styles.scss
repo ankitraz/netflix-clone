@@ -98,6 +98,10 @@ h1, h2 {
         top: 2px;
     }
 
+    &:hover{
+        background-color: darken($primary-color, 10%);
+        transition: background-color 0.1s;
+    }
     @media screen and (min-width: 768px) {
         &{
             font-size: 2.4rem;
@@ -115,6 +119,7 @@ h1, h2 {
     border-radius: 4px;
     outline: 0;
     border: 1px solid grey;
+    color: white; 
 
     &::placeholder {
         font-size: 1.6rem;
@@ -197,7 +202,7 @@ h1, h2 {
     background: #000000;
     color: white;
     border-radius: 4px;
-    padding: 0 2rem;
+    padding: 0.7rem 1rem;
     padding-top: 2px;
     font-size: 1.6rem;
     option{
@@ -205,3 +210,198 @@ h1, h2 {
     }
 }
 
+// nav
+
+.nav {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .nav__img {
+        content: url(assets/Netflix_Logo_PMS.png);
+        width: 13rem;
+    }
+    &.block{
+        padding-top: 1rem;
+    }
+
+    .nav__content{
+        display: flex;
+        align-items: center;
+
+        form, .btn {
+            margin-right: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .btn {
+            padding: 1rem 1.8rem;
+            white-space: nowrap;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .nav__img{
+            width: 20rem;
+        }
+    }
+}
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.block {
+     --padding-vertical: 6rem;
+     padding: var(--padding-vertical) 2rem;
+}
+
+.block--dark {
+    background: #000000;
+    color: white;
+}
+
+.grid {
+    display: grid;
+
+    &.grid--1x2{
+        @media screen and (min-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 2rem;
+        }
+    }
+}
+
+// hero
+
+.hero {
+    background: url(assets/IN-en-20230710-popsignuptwoweeks-perspective_alpha_website_large.jpg) no-repeat center center/cover;
+    color: white;
+    text-align: center;
+
+    .overlay {
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+    
+
+        .overlay-2{
+            background: rgb(0 0 0 / 40%);
+        }
+    }
+
+    .hero__content{
+        @media screen and (min-width:768px){
+            padding-top: 8rem;
+            padding-bottom: 15rem;
+        }
+    }
+
+    .input {
+        margin-bottom: 2rem;
+        width: 80vw;
+        background: rgba(14, 14, 14, 0.5);
+    }
+
+    &{
+        @media screen and (min-width: 768px) {
+            .input{
+                width: 30%;
+            }
+
+            .btn {
+                padding-top: 0.9rem;
+                padding-bottom: 0.8rem;
+                padding-right: 1.4rem;
+                padding-left: 1.3rem;
+                margin-left: 0.4rem;
+            }
+        }
+    }
+}
+
+//feature 
+.feature {
+    border-top: 0.8rem solid #2b2a2a;
+    .grid{
+        .feature__text{
+            align-self: center;
+            text-align: center;
+        }
+
+        .feature__img{
+            width: 100%;
+        }
+
+        &{
+            @media screen and (min-width: 768px) {
+                .feature__text{
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+
+.inverted__grid {
+    .feature__img {
+        grid-row-start: 2;
+        grid-row-end: 3;
+
+        & {
+            @media screen and (min-width: 768px) {
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+        }
+    }
+}
+
+//faq-section
+.faq {
+    border-top: 0.8rem solid #2b2a2a;
+    h2 {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .faq__callout{
+        margin-top: 6rem;
+        text-align: center;
+        p{
+            font-size: 2rem;
+        }
+    }
+
+    .btn{
+        padding-bottom: 0.9rem;
+        padding-top: 0.9rem;
+    }
+
+    .input{
+        background: rgba(14, 14, 14, 0.5);
+        margin-bottom: 1rem;
+        
+    }
+
+    & {
+        @media screen and (min-width: 768px) {
+            .input{
+                width: 30%;
+            }
+        }
+    }
+}
+
+//footer 
+.footer{
+    text-align: center;
+    color: white;
+    font-size: 1.7rem;
+    background-color: #2d2d2d;
+    .footer__text {
+        display: inline-block;
+        margin-bottom: 0.7rem;
+        margin-top: 0.7rem;
+    }
+}
